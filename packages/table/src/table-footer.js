@@ -69,9 +69,6 @@ export default {
                         ? column.renderFooter.call(this._renderProxy, h, { column, $index: cellIndex, value: sums[cellIndex], _self: this.$parent.$vnode.context })
                         : sums[cellIndex]
                     }
-                    {
-                      sums[cellIndex]
-                    }
                   </div>
                 </td>
               )
