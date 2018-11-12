@@ -65,6 +65,11 @@ export default {
                   class={ [column.id, column.headerAlign, column.className || '', this.isCellHidden(cellIndex, this.columns) ? 'is-hidden' : '', !column.children ? 'is-leaf' : '', column.labelClassName] }>
                   <div class={ ['cell', column.labelClassName] }>
                     {
+                      column.renderFooter
+                        ? column.renderFooter.call(this._renderProxy, h, { column, $index: cellIndex, value: sums[cellIndex], _self: this.$parent.$vnode.context })
+                        : sums[cellIndex]
+                    }
+                    {
                       sums[cellIndex]
                     }
                   </div>
